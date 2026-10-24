@@ -9,7 +9,12 @@ This repository is a working standard under validation, not a claim of proven ma
 
 1. [Controller & Task Orchestration Standard V1.0](docs/01-controller-task-orchestration-standard-v1.0.md) — project goals, authorization, prioritization, parallel coordination, shared status ledger, integration decisions, and final acceptance.
 2. [Middle-Layer Task Coordination & Closure Standard V1.0](docs/02-middle-layer-task-coordination-closure-standard-v1.0.md) — task decomposition, executable coding-tool contracts, implementation coordination, independent verification, consolidated corrections, and handoff.
-3. [Shared Protocol & Templates V1.0](docs/03-shared-protocol-and-templates-v1.0.md) — common terminology, task identifiers, evidence rules, status vocabulary, and reusable templates.
+3. [Shared Protocol & Templates V1.0](docs/03-shared-protocol-and-templates-v1.0.md) — common terminology, task identifiers, evidence rules, and status vocabulary.
+
+## Copy-ready templates
+
+- [Task Contract Template](templates/task-contract.md) — freeze authorization, scope, dependencies, stop conditions, deliverables, and objective acceptance criteria before execution.
+- [Task Closeout & Acceptance Record Template](templates/task-closeout.md) — separate execution evidence, independent review, controller decision, and final closure record.
 
 ## Operating model
 
@@ -28,6 +33,7 @@ The controller may delegate execution and verification tasks but retains final p
 - Keep implementation, self-verification, independent verification, commit, push, integration, and final acceptance as distinct states.
 - Treat previously accepted work as a baseline; revisit it only for a regression, contract conflict, security issue, current-task blocker, or explicit authorization.
 - Use a 3–5 interaction target to control iteration cost, not to weaken acceptance criteria. Escalate or re-plan when progress stalls.
+- Freeze the task contract before implementation; any material change to objective, scope, acceptance criteria, or risk authorization must be explicitly recorded and approved by the authorized role.
 - Record durable status outside conversational memory.
 - Do not claim PASS without actual verification evidence.
 
