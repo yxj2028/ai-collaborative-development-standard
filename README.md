@@ -11,6 +11,10 @@ This repository is a working standard under validation, not a claim of proven ma
 2. [Middle-Layer Task Coordination & Closure Standard V1.0](docs/02-middle-layer-task-coordination-closure-standard-v1.0.md) — task decomposition, executable coding-tool contracts, implementation coordination, independent verification, consolidated corrections, and handoff.
 3. [Shared Protocol & Templates V1.0](docs/03-shared-protocol-and-templates-v1.0.md) — common terminology, task identifiers, evidence rules, and status vocabulary.
 
+## Proposals
+
+- `proposals/` contains non-normative improvement proposals for discussion and validation. Proposal documents do not modify the current standards, task contracts, authorization, status vocabulary, or accepted baselines unless separately reviewed and formally approved through the repository's governance process. Proposal lifecycle labels such as `PROPOSED` are not task execution statuses.
+
 ## Copy-ready templates
 
 - [Task Contract Template](templates/task-contract.md) — freeze authorization, scope, dependencies, stop conditions, deliverables, and objective acceptance criteria before execution.
