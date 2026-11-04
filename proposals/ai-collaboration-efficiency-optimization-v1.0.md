@@ -39,33 +39,7 @@
 5. 对话历史与 AI 记忆：仅用于定位线索，不作为事实或授权依据。
 
 发生冲突时，记录冲突并核对对应权威来源；不得仅凭摘要或记忆宣布 PASS。");
-s = s.replace("## 5. 三类信息交接
-
-建议将长期状态、本轮指令和本轮结果分开，避免每次交接复制整个历史。
-
-### 5.1 TASK_STATUS：长期状态
-
-记录当前目标、状态、已接受内容、剩余工作、阻塞及下一动作；保存正式合同和证据链接，不复制冗长执行日志。
-
-### 5.2 EXECUTION_TASK：本轮执行合同
-
-按现有项目模板填写，至少明确：
-
-- TASK_ID / ROUND_ID / RECIPIENT
-- WORKSPACE / BASELINE / CONTRACT
-- OBJECTIVE / AUTHORIZED_SCOPE / OUT_OF_SCOPE
-- REQUIRED_ACTION / DEPENDENCIES / STOP_CONDITIONS
-- VERIFY / DELIVERABLE / REPORT_TO
-
-必须明确执行对象和准确工作目录；关键业务规则、授权和验收条件不能留给工具猜测。
-
-### 5.3 EXECUTION_RESULT：本轮实际结果
-
-按任务风险记录实际执行方、工作区、分支与 HEAD、变更文件、执行命令、测试环境与结果、退出码、失败/跳过/未执行项、证据位置、提交/推送/集成状态、阻塞和下一动作。
-
-严格区分 IMPLEMENTED、SELF-VERIFIED、INDEPENDENTLY-VERIFIED、COMMITTED、PUSHED、INTEGRATED 与 ACCEPTED/CLOSED。前一状态不自动证明后一状态。已有项目模板可直接满足这些字段时，不另造重复模板。
-
-## 4. 已接受基线与增量核查
+s = s.replace("## 4. 已接受基线与增量核查
 
 已正式接受的工作应作为后续任务的可信基线。后续任务不应无理由重做、重测或重构前序工作。
 
@@ -73,31 +47,19 @@ s = s.replace("## 5. 三类信息交接
 
 处理基线问题采用可追踪的最小闭环：Finding → 影响范围 → 最小修复 → 针对性验证 → 返回当前任务。不得借局部问题扩展为无关重构。此原则不免除当前任务对自身交付物和必要集成验证的责任。
 
-## 5. 三类信息交接
+## 5. 三类信息交接：映射到已有记录
 
-建议将长期状态、本轮指令和本轮结果分开，避免每次交接复制整个历史。
+长期状态、本轮执行指令和本轮执行结果应在概念上区分，但不意味着必须新增三种文件、模板或字段。优先映射到项目已经批准的记录：
 
-### 5.1 TASK_STATUS：长期状态
+- **TASK_STATUS：** 映射到现有任务台账/任务状态记录，作为当前状态摘要；
+- **EXECUTION_TASK：** 映射到现有任务合同或执行任务模板；
+- **EXECUTION_RESULT：** 映射到现有关闭/交付报告中的执行事实与验证结果部分。
 
-记录当前目标、状态、已接受内容、剩余工作、阻塞及下一动作；保存正式合同和证据链接，不复制冗长执行日志。
+以上是信息类型映射，不是要求创建同名文件、字段或模板。项目现有记录已能承载信息时，不复制、不另建。
 
-### 5.2 EXECUTION_TASK：本轮执行合同
+执行结果应按任务风险记录实际执行方、准确工作目录、分支与 HEAD、变更文件、执行命令、测试环境与结果、退出码、失败/跳过/未执行项、证据位置、提交/推送/集成状态、阻塞和下一动作。
 
-按现有项目模板填写，至少明确：
-
-- TASK_ID / ROUND_ID / RECIPIENT
-- WORKSPACE / BASELINE / CONTRACT
-- OBJECTIVE / AUTHORIZED_SCOPE / OUT_OF_SCOPE
-- REQUIRED_ACTION / DEPENDENCIES / STOP_CONDITIONS
-- VERIFY / DELIVERABLE / REPORT_TO
-
-必须明确执行对象和准确工作目录；关键业务规则、授权和验收条件不能留给工具猜测。
-
-### 5.3 EXECUTION_RESULT：本轮实际结果
-
-按任务风险记录实际执行方、工作区、分支与 HEAD、变更文件、执行命令、测试环境与结果、退出码、失败/跳过/未执行项、证据位置、提交/推送/集成状态、阻塞和下一动作。
-
-严格区分 IMPLEMENTED、SELF-VERIFIED、INDEPENDENTLY-VERIFIED、COMMITTED、PUSHED、INTEGRATED 与 ACCEPTED/CLOSED。前一状态不自动证明后一状态。已有项目模板可直接满足这些字段时，不另造重复模板。
+严格区分 IMPLEMENTED、SELF-VERIFIED、INDEPENDENTLY-VERIFIED、COMMITTED、PUSHED、INTEGRATED 与 ACCEPTED/CLOSED。前一状态不自动证明后一状态。Coding Tool 负责报告实施、自检、部分完成或阻塞等事实；最终接受仍由 Controller 或项目明确授权的验收角色作出。风险分类和验收权限由项目授权角色确定。
 
 ## 6. 状态驱动与事件式恢复
 
